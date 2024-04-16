@@ -1,12 +1,23 @@
-import express from 'express';
-import authRouter from './routes/authRouter';
+import express from "express";
+import authRouter from "./routes/authRouter";
+import connectDB from "./connections/userDB";
+import bodyParser from "body-parser";
+import cors from "cors";
 
+// dotenv.config();
 const app = express();
-const port = process.env.PORT || 8000;
+app.use(bodyParser.json());
+//const port1 = process.env.PORT || 3030;
+//console.log("port", port1);
+connectDB();
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-    
+app.listen(3000, () => {
+  console.log('Server is running on port 3000 ');
 });
+app.use(
+  cors({
+    credentials: true,
+  })
+);
 
 app.use(authRouter);
