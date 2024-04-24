@@ -1,14 +1,17 @@
 import express from "express";
+import cookieParser from "cookie-parser";
 import authRouter from "./routes/authRouter";
 import connectDB from "./connections/userDB";
 import bodyParser from "body-parser";
 import cors from "cors";
+import { errorHandler } from "./middleware/errorMiddleware";
+import userRouter from "./routes/userRoutes";
 
-// dotenv.config();
+
 const app = express();
 app.use(bodyParser.json());
-//const port1 = process.env.PORT || 3030;
-//console.log("port", port1);
+app.use(cookieParser());
+
 connectDB();
 
 app.listen(3000, () => {
@@ -21,3 +24,6 @@ app.use(
 );
 
 app.use(authRouter);
+app.use(userRouter)
+app.use(errorHandler);
+
