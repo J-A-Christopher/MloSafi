@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from "express";
 import User from "../models/User";
-import { AuthenticationError } from "../middleware/errorMiddleware";
 
 interface UserData extends Request {
   user?: any;
