@@ -1,0 +1,107 @@
+[
+  {
+    "foodId": "1",
+    "starRating": 3,
+    "name": "Pizza",
+    "imageUrl": "https://kauquemibicahqiybdwc.supabase.co/storage/v1/object/sign/mlosafi/pizza.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtbG9zYWZpL3BpenphLmpwZyIsImlhdCI6MTcxNDEyNjcxNSwiZXhwIjoxNzQ1NjYyNzE1fQ.cxXotiIact6QAYdxb2ibbmc2RxkKysIQ6jNHMIqa9_s&t=2024-04-26T10%3A15%3A41.327Z",
+    "price": 12,
+    "description": "A cool one",
+    "category": { "categoryId": "11", "foodId": "1", "name": "Pepperoni" },
+    "subCategory": {
+      "categoryId": "11",
+      "subCategoryId": "111",
+      "name": null,
+      "size": "Medium"
+    }
+  },
+  {
+    "foodId": "2",
+    "starRating": 4,
+    "name": "Burger",
+    "imageUrl": "https://kauquemibicahqiybdwc.supabase.co/storage/v1/object/sign/mlosafi/burger.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtbG9zYWZpL2J1cmdlci5wbmciLCJpYXQiOjE3MTQxMjQ3ODIsImV4cCI6MTc0NTY2MDc4Mn0.UfSY8hYjFCt7wJh9gyT3RhpBaB0KbZG3DB9a2Q1XnJQ&t=2024-04-26T09%3A43%3A27.539Z",
+    "price": 10,
+    "description": "Delicious and juicy",
+    "category": { "categoryId": "12", "foodId": "2", "name": "Cheeseburger" },
+    "subCategory": {
+      "categoryId": "12",
+      "subCategoryId": "112",
+      "name": null,
+      "size": "Large"
+    }
+  },
+  {
+    "foodId": "3",
+    "starRating": 5,
+    "name": "Fries",
+    "imageUrl": "https://kauquemibicahqiybdwc.supabase.co/storage/v1/object/sign/mlosafi/friescombo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtbG9zYWZpL2ZyaWVzY29tYm8ucG5nIiwiaWF0IjoxNzE0MTI0OTA5LCJleHAiOjE3NDU2NjA5MDl9.nvRl_jex3nifat2CAkggGJVsHjmAz_VEDC3-iDZ5doo&t=2024-04-26T09%3A45%3A34.939Z",
+    "price": 15,
+    "description": "Classic dish",
+    "category": { "categoryId": "13", "foodId": "3", "name": "Chili Fries" },
+    "subCategory": {
+      "categoryId": "13",
+      "subCategoryId": "113",
+      "name": null,
+      "size": "Regular"
+    }
+  },
+  {
+    "foodId": "4",
+    "starRating": 4,
+    "name": "Fresh Juice",
+    "imageUrl": "https://kauquemibicahqiybdwc.supabase.co/storage/v1/object/sign/mlosafi/juice.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtbG9zYWZpL2p1aWNlLmpwZyIsImlhdCI6MTcxNDEyNjMzMCwiZXhwIjoxNzQ1NjYyMzMwfQ.otlSEOeomjYhHZhWGR4Xm4weaPC46X4djrcixgrrER4&t=2024-04-26T10%3A09%3A16.022Z",
+    "price": 8,
+    "description": "Refreshing drink",
+    "category": { "categoryId": "14", "foodId": "4", "name": "Smoothie" },
+    "subCategory": {
+      "categoryId": "14",
+      "subCategoryId": "118",
+      "name": null,
+      "size": "500ml"
+    }
+  },
+  {
+    "foodId": "5",
+    "starRating": 5,
+    "name": "Fish",
+    "imageUrl": "https://kauquemibicahqiybdwc.supabase.co/storage/v1/object/sign/mlosafi/fish.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtbG9zYWZpL2Zpc2gucG5nIiwiaWF0IjoxNzE0MTI2NDA4LCJleHAiOjE3NDU2NjI0MDh9.p3h955Oo_XU5VKnkyCNbciucUkfMJLGO0DU1HRIKA58&t=2024-04-26T10%3A10%3A34.105Z",
+    "price": 20,
+    "description": "Freshly cooked",
+    "category": { "categoryId": "15", "foodId": "5", "name": "Tilapia" },
+    "subCategory": {
+      "categoryId": "15",
+      "subCategoryId": "119",
+      "name": null,
+      "size": "1"
+    }
+  },
+  {
+    "foodId": "6",
+    "starRating": 4,
+    "name": "Rice",
+    "imageUrl": "https://kauquemibicahqiybdwc.supabase.co/storage/v1/object/sign/mlosafi/rice.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtbG9zYWZpL3JpY2UucG5nIiwiaWF0IjoxNzE0MTI2NTE4LCJleHAiOjE3NDU2NjI1MTh9.RJ1UwtR8nPK566jNj5NDcrx3aHFlIfCopwr_LA9Ou0c&t=2024-04-26T10%3A12%3A23.726Z",
+    "price": 5,
+    "description": "Steamed perfection",
+    "category": { "categoryId": "16", "foodId": "6", "name": "Pishori" },
+    "subCategory": {
+      "categoryId": "16",
+      "subCategoryId": "120",
+      "name": null,
+      "size": "Large"
+    }
+  },
+  {
+    "foodId": "7",
+    "starRating": 3,
+    "name": "Smokie",
+    "imageUrl": "https://kauquemibicahqiybdwc.supabase.co/storage/v1/object/sign/mlosafi/smokie.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtbG9zYWZpL3Ntb2tpZS5qcGVnIiwiaWF0IjoxNzE0MTI2NjM0LCJleHAiOjE3NDU2NjI2MzR9.RUKjPV6eCCpajumEDlMFZlj28_-PW8tNrkGgvK07QmA&t=2024-04-26T10%3A14%3A20.030Z",
+    "price": 3,
+    "description": "Grilled goodness",
+    "category": { "categoryId": "17", "foodId": "7", "name": "Smokie" },
+    "subCategory": {
+      "categoryId": "17",
+      "subCategoryId": "121",
+      "name": null,
+      "size": "Regular"
+    }
+  }
+]
