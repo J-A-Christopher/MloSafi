@@ -7,6 +7,7 @@ import cors from "cors";
 import { errorHandler } from "./middleware/errorMiddleware";
 import userRouter from "./routes/userRoutes";
 import foodRouter from "./routes/foodroutes";
+import cartRoutes from "./routes/cart-rotes";
 
 
 const app = express();
@@ -27,4 +28,5 @@ app.use(
 app.use(authRouter);
 app.use(userRouter);
 app.use(foodRouter);
+app.use(cartRoutes);
 app.use(errorHandler);

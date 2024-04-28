@@ -7,6 +7,7 @@ interface UserData extends Request {
 const getUser = async (req: UserData, res: Response, next: NextFunction) => {
   try {
     const userId = req.user?._id;
+    console.log(userId);
     const user = await User.findById(userId, "username email fname");
     if (!user) {
       res.status(400).json({ message: "User not found" });
