@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import Cart from "../models/cart_model";
-
+import Food from "../models/Food";
 interface UserData extends Request {
   user?: any;
 }
@@ -12,10 +12,17 @@ const addItemToCart = async (
   try {
     const userId = req.user._id;
     const foodId = req.params.foodId;
+    const foodItem = await Food.findOne({ foodId });
+
+    if (!foodItem) {
+      return res.status(404).json({message: "No such Food !"});
+    }
+
     const existingCart = await Cart.findOne({
       userId: userId,
       "items.foodId": foodId,
     });
+
     if (existingCart) {
       await Cart.updateOne(
         { userId: userId, "items.foodId": foodId },
@@ -23,9 +30,14 @@ const addItemToCart = async (
       );
     } else {
       const newCartItem = {
-        foodId: foodId,
+        foodId: foodItem.foodId,
         quantity: 1,
+        name: foodItem.name,
+        price: foodItem.price,
+        description: foodItem.description,
+        imageUrl: foodItem.imageUrl,
       };
+
       await Cart.findOneAndUpdate(
         { userId: userId },
         { $push: { items: newCartItem } },
@@ -39,8 +51,12 @@ const addItemToCart = async (
   }
 };
 
-//Delete specific item in the cart 
-const deleteCartItem = async (req: UserData, res: Response, next: NextFunction) => {
+//Delete specific item in the cart
+const deleteCartItem = async (
+  req: UserData,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const userId = req.user._id;
     const foodId = req.params.foodId;
@@ -48,9 +64,11 @@ const deleteCartItem = async (req: UserData, res: Response, next: NextFunction) 
       { userId: userId },
       { $pull: { items: { foodId: foodId } } }
     );
-    
+
     if (!result) {
-      return res.status(404).json({ message: "Can not delete item; Item not found" });
+      return res
+        .status(404)
+        .json({ message: "Can not delete item; Item not found" });
     } else {
       return res.status(200).json({ message: "Successfully deleted item" });
     }
@@ -59,7 +77,6 @@ const deleteCartItem = async (req: UserData, res: Response, next: NextFunction) 
     next(new Error());
   }
 };
-
 
 const getCart = async (req: UserData, res: Response, next: NextFunction) => {
   try {
@@ -79,19 +96,21 @@ const getCart = async (req: UserData, res: Response, next: NextFunction) => {
   }
 };
 
-const deleteAllCartItems = async (req: UserData, res: Response, next: NextFunction) => {
+const deleteAllCartItems = async (
+  req: UserData,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const userId = req.user._id;
-  
-    
-    // Find the cart item to delete
-    const itemToDelete = await Cart.findOne({ userId: userId});
-    
+    const itemToDelete = await Cart.findOne({ userId: userId });
+
     if (!itemToDelete) {
-      return res.status(404).json({ message: "Can not delete item; Item not found" });
+      return res
+        .status(404)
+        .json({ message: "Can not delete item; Item not found" });
     } else {
-      // Delete the cart item
-      await Cart.findOneAndDelete({ userId: userId});
+      await Cart.findOneAndDelete({ userId: userId });
       return res.status(200).json({ message: "Successfully deleted item" });
     }
   } catch (e) {
@@ -100,5 +119,4 @@ const deleteAllCartItems = async (req: UserData, res: Response, next: NextFuncti
   }
 };
 
-
-export { addItemToCart, getCart, deleteCartItem , deleteAllCartItems};
+export { addItemToCart, getCart, deleteCartItem, deleteAllCartItems };

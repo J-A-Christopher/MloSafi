@@ -1,10 +1,13 @@
 import mongoose, { Document, Schema } from "mongoose";
 import Food from "./Food";
 
-interface CartItem {
-  //foodId: Schema.Types.ObjectId;
+export interface CartItem {
   foodId: string;
   quantity: number;
+  name: string;
+  price: number;
+  description: string;
+  imageUrl: string;
 }
 export interface ICart extends Document {
   userId: Schema.Types.ObjectId;
@@ -16,17 +19,12 @@ const cartSchema = new Schema<ICart>({
   userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
   items: [
     {
-      foodId: {
-        type: String,
-        // type: Schema.Types.ObjectId,
-        // ref: "Food",
-        required: true,
-      },
-      quantity: {
-        type: Number,
-        required: true,
-        default: 1,
-      },
+      foodId: { type: String, required: true },
+      quantity: { type: Number, required: true, default: 1 },
+      name: { type: String, required: true },
+      price: { type: Number, required: true },
+      description: { type: String, required: true },
+      imageUrl: { type: String, required: true },
     },
   ],
 });
