@@ -9,6 +9,8 @@ import userRouter from "./routes/userRoutes";
 import foodRouter from "./routes/foodroutes";
 import cartRoutes from "./routes/cart-rotes";
 import orderRoutes from "./routes/order_routes";
+import stkRoutes from "./routes/stkroutes";
+
 
 const app = express();
 app.use(bodyParser.json());
@@ -30,4 +32,5 @@ app.use(userRouter);
 app.use(foodRouter);
 app.use(cartRoutes);
 app.use(orderRoutes);
+app.use(stkRoutes);
 app.use(errorHandler);
