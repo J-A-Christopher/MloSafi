@@ -4,6 +4,7 @@ import authRouter from "./routes/authRouter";
 import connectDB from "./connections/userDB";
 import bodyParser from "body-parser";
 import cors from "cors";
+import useragent from "express-useragent";
 import { errorHandler } from "./middleware/errorMiddleware";
 import userRouter from "./routes/userRoutes";
 import foodRouter from "./routes/foodroutes";
@@ -11,8 +12,8 @@ import cartRoutes from "./routes/cart-rotes";
 import orderRoutes from "./routes/order_routes";
 import stkRoutes from "./routes/stkroutes";
 
-
 const app = express();
+app.use(useragent.express());
 app.use(bodyParser.json());
 app.use(cookieParser());
 

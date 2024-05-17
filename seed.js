@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const Food = require("./src/models/food");
-const Category = require("./src/models/category");
-const SubCategory = require("./src/models/subcategory");
+const Food = require("./src/models/seedingModels/food");
+const Category = require("./src/models/seedingModels/category");
+const SubCategory = require("./src/models/seedingModels/subcategory");
 const foodData = require("./data.json");
 const dotenv = require("dotenv");
 
