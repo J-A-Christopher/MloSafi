@@ -4,17 +4,6 @@ import { Response } from "express";
 
 dotenv.config();
 
-// const generateToken = (res: Response, userId: string,username:string,email:string) => {
-//     const jwtSecret = process.env.JWT_SECRET || "defaultSecret";
-//     const token = jwt.sign({ userId,username, email }, jwtSecret, { expiresIn: "1h" });
-//     res.cookie("jwt", token, {
-//         httpOnly: true,
-//         secure: process.env.NODE_ENV !== "development",
-//         sameSite: "strict",
-//         maxAge: 60*60*1000
-//     })
-// }
-
 const generateToken = (
   userId: string,
   username: string,
