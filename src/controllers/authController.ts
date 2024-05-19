@@ -50,9 +50,6 @@ const authenticateUser = async (
     }
 
     if (user && user.comparePassword(password)) {
-      const isMobile = req.useragent && req.useragent.isMobile;
-      console.log(!isMobile);
-      console.log("User-Agent:", req.headers["user-agent"]);
       const token = generateToken(user._id, user.username, user.email);
 
       return res.status(201).json({ token });
