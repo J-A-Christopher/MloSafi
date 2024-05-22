@@ -5,7 +5,7 @@ import SubCategory from "../models/Subcategory";
 
 const getFood = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const food = await Food.find();
+    const food = await Food.find().populate("category").populate("subCategory");
     res.status(200).json({ food });
   } catch (e) {
     next(new Error());

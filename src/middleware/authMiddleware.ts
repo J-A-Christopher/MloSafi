@@ -15,7 +15,6 @@ const authenticate = asyncHandler(
       // console.log(req);
       let token = req.headers.token;
       console.log("token------------", token);
-
       if (!token) {
         res.status(401);
         throw new AuthenticationError("Token not found");
